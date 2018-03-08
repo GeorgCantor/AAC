@@ -1,6 +1,6 @@
 package com.georgcantor.aac.di.modules
 
-import com.georgcantor.aac.ui.MainActivity
+import com.georgcantor.aac.ui.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
