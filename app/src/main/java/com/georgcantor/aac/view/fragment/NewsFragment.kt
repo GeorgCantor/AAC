@@ -6,10 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.georgcantor.aac.R
 import com.georgcantor.aac.model.data.NewsResponse
 import com.georgcantor.aac.view.adapter.NewsAdapter
 import com.georgcantor.aac.viewmodel.MainViewModel
+import kotlinx.android.synthetic.main.fragment_news.*
 
 class NewsFragment : Fragment() {
 
@@ -28,7 +31,12 @@ class NewsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+
+        val view = inflater.inflate(R.layout.fragment_news, container, false)
+        recyclerView = newsRecyclerView
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,17 +47,8 @@ class NewsFragment : Fragment() {
         viewModel.getNews(source).observe(viewLifecycleOwner, Observer<NewsResponse> { news ->
             if (news != null) {
                 recyclerView.adapter = adapter
-
+                adapter.setNews(news)
             }
         })
     }
-
-//    private fun observeViewModel(viewModel: MainViewModel) {
-//        viewModel.getCatsLiveData().observe(viewLifecycleOwner, Observer<Any> { cats ->
-//            if (cats != null) {
-//                recyclerView.setAdapter(adapter)
-//                adapter.setList(cats)
-//            }
-//        })
-//    }
 }
