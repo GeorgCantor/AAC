@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainRepository {
 
-    private static final String MOVIES_URL = "http://api.themoviedb.org/3/";
+    private static final String MOVIES_URL = "https://newsapi.org/v2/";
     private Api api;
     private static MainRepository repository;
 
