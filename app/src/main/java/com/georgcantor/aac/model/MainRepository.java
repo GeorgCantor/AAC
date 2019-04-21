@@ -1,5 +1,6 @@
 package com.georgcantor.aac.model;
 
+import com.georgcantor.aac.BuildConfig;
 import com.georgcantor.aac.model.data.NewsResponse;
 import com.georgcantor.aac.model.remote.Api;
 
@@ -17,7 +18,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainRepository {
 
     private static final String MOVIES_URL = "http://api.themoviedb.org/3/";
-    public static final String API_KEY = "bc0eb2dc0d13435180ee1b514c32606e";
     private Api api;
     private static MainRepository repository;
 
@@ -48,7 +48,7 @@ public class MainRepository {
     public LiveData<NewsResponse> getNews(String sources) {
         final MediatorLiveData<NewsResponse> news = new MediatorLiveData<>();
 
-        api.getHeadlines(sources, API_KEY).enqueue(new Callback<NewsResponse>() {
+        api.getHeadlines(sources, BuildConfig.API_KEY).enqueue(new Callback<NewsResponse>() {
             @Override
             public void onResponse(Call<NewsResponse> call, Response<NewsResponse> response) {
                 news.setValue(response.body());
