@@ -49,7 +49,7 @@ class NewsFragment : Fragment() {
     }
 
     private fun observeViewModel(viewModel: MainViewModel) {
-        viewModel.getNews("independent").observe(viewLifecycleOwner, Observer<NewsResponse> { news ->
+        viewModel.getNews(source).observe(viewLifecycleOwner, Observer<NewsResponse> { news ->
             if (news != null) {
                 recyclerView.adapter = adapter
                 adapter.setNews(news)
