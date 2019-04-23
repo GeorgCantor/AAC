@@ -2,8 +2,8 @@ package com.georgcantor.aac.view
 
 import android.graphics.Typeface
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.georgcantor.aac.R
 import com.georgcantor.aac.view.fragment.NewsFragment
@@ -35,18 +35,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val bundle = Bundle()
+        bundle.putString("source", "bbc-news")
+
         newsFragment = NewsFragment()
         if (savedInstanceState == null) {
             loadFragment(newsFragment)
+            newsFragment.arguments = bundle
         }
 
         createDrawer(savedInstanceState, null, null)
-    }
-
-    private fun loadFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, fragment)
-        transaction.commit()
     }
 
     private fun createDrawer(savedInstanceState: Bundle?,
@@ -209,7 +207,6 @@ class MainActivity : AppCompatActivity() {
 
         result = DrawerBuilder()
                 .withActivity(this)
-                .withToolbar(toolbar!!)
                 .withSelectedItem(1)
                 .addDrawerItems(item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10
 //                        item11, item12, item13, item14, item15, item16, item17, item18, item19,
@@ -551,5 +548,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 .withSavedInstance(savedInstanceState)
                 .build()
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container, fragment)
+        transaction.commit()
     }
 }
