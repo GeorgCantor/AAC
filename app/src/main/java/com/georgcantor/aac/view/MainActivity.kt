@@ -7,14 +7,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.georgcantor.aac.R
 import com.georgcantor.aac.view.fragment.NewsFragment
+import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
-import com.mikepenz.materialdrawer.model.interfaces.Nameable
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var newsFragment: Fragment
     private lateinit var source: String
+    private var result: Drawer? = null
 
     private val sources = arrayOf("abc-news-au", "associated-press", "bbc-news",
             "cnn", "google-news", "independent", "metro", "mirror", "newsweek", "new-york-magazine",
@@ -38,6 +39,8 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             loadFragment(newsFragment)
         }
+
+        createDrawer(savedInstanceState, null, null)
     }
 
     private fun loadFragment(fragment: Fragment) {
@@ -208,7 +211,8 @@ class MainActivity : AppCompatActivity() {
                 .withActivity(this)
                 .withToolbar(toolbar!!)
                 .withSelectedItem(1)
-                .addDrawerItems(item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19,
+                .addDrawerItems(item0, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10
+//                        item11, item12, item13, item14, item15, item16, item17, item18, item19,
 //                        item20, item21, item22, item23, item24, item25, item26, item27, item28, item29,
 //                        item30, item31, item32, item33, item34, item35, item36, item37, item38, item39,
 //                        item40, item41, item42, item43, item44, item45, item46, item47, item48, item49,
@@ -221,54 +225,44 @@ class MainActivity : AppCompatActivity() {
                     val selected = drawerItem.identifier.toInt()
                     when (selected) {
                         1 -> {
-                            source = sourceArray[0]
-                            onLoadingSwipeRefreshLayout()
-                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
+                            source = sources[0]
+//                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
                         }
                         2 -> {
-                            source = sourceArray[1]
-                            onLoadingSwipeRefreshLayout()
-                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
+                            source = sources[1]
+//                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
                         }
                         3 -> {
-                            source = sourceArray[2]
-                            onLoadingSwipeRefreshLayout()
-                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
+                            source = sources[2]
+//                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
                         }
                         4 -> {
-                            source = sourceArray[3]
-                            onLoadingSwipeRefreshLayout()
-                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
+                            source = sources[3]
+//                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
                         }
                         5 -> {
-                            source = sourceArray[4]
-                            onLoadingSwipeRefreshLayout()
-                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
+                            source = sources[4]
+//                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
                         }
                         6 -> {
-                            source = sourceArray[5]
-                            onLoadingSwipeRefreshLayout()
-                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
+                            source = sources[5]
+//                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
                         }
                         7 -> {
-                            source = sourceArray[6]
-                            onLoadingSwipeRefreshLayout()
-                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
+                            source = sources[6]
+//                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
                         }
                         8 -> {
-                            source = sourceArray[7]
-                            onLoadingSwipeRefreshLayout()
-                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
+                            source = sources[7]
+//                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
                         }
                         9 -> {
-                            source = sourceArray[8]
-                            onLoadingSwipeRefreshLayout()
-                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
+                            source = sources[8]
+//                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
                         }
                         10 -> {
-                            source = sourceArray[9]
-                            onLoadingSwipeRefreshLayout()
-                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
+                            source = sources[9]
+//                            title!!.text = (drawerItem as Nameable<*>).name.getText(this@MainActivity)
                         }
 //                        11 -> {
 //                            source = sourceArray[10]
