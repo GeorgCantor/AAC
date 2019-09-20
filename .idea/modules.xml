@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AAC.iml" filepath="$PROJECT_DIR$/AAC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/AAC-app.iml" filepath="$PROJECT_DIR$/app/AAC-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-AAC.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-AAC.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
