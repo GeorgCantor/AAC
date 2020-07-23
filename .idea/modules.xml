@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AAC.iml" filepath="$PROJECT_DIR$/AAC.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/AAC-app.iml" filepath="$PROJECT_DIR$/app/AAC-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidProjects-AAC.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidProjects-AAC.iml" group="AAC" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidProjects-AAC-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidProjects-AAC-app.iml" group="AAC/app" />
       <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-AAC.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-AAC.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
