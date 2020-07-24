@@ -11,6 +11,7 @@ import com.georgcantor.aac.databinding.FragmentHomeBinding
 import com.georgcantor.aac.view.base.DatabindingFragment
 import com.georgcantor.aac.view.extensions.gone
 import com.georgcantor.aac.view.extensions.visible
+import com.georgcantor.aac.view.view.adapter.PosterAdapter
 import com.google.android.material.transition.platform.MaterialArcMotion
 import com.google.android.material.transition.platform.MaterialContainerTransform
 import org.koin.android.viewmodel.ext.android.getViewModel

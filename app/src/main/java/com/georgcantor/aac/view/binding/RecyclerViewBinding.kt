@@ -4,6 +4,10 @@ import android.widget.Toast
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
+import com.georgcantor.aac.view.model.Poster
+import com.georgcantor.aac.view.view.adapter.PosterAdapter
+import com.georgcantor.aac.view.view.adapter.PosterCircleAdapter
+import com.georgcantor.aac.view.view.adapter.PosterLineAdapter
 import com.skydoves.baserecyclerviewadapter.BaseAdapter
 import com.skydoves.whatif.whatIfNotNull
 import com.skydoves.whatif.whatIfNotNullOrEmpty

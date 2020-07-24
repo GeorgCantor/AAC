@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import com.georgcantor.aac.R
 import com.georgcantor.aac.databinding.FragmentLibraryBinding
 import com.georgcantor.aac.view.base.DatabindingFragment
+import com.georgcantor.aac.view.view.adapter.PosterLineAdapter
 import org.koin.android.viewmodel.ext.android.getViewModel
 
 class LibraryFragment : DatabindingFragment() {
