@@ -4,7 +4,7 @@ import android.widget.Toast
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
-import com.georgcantor.aac.view.model.Poster
+import com.georgcantor.aac.view.model.Article
 import com.georgcantor.aac.view.view.adapter.PosterAdapter
 import com.georgcantor.aac.view.view.adapter.PosterCircleAdapter
 import com.georgcantor.aac.view.view.adapter.PosterLineAdapter
@@ -25,21 +25,21 @@ fun bindToast(view: RecyclerView, text: LiveData<String>) {
 }
 
 @BindingAdapter("adapterPosterList")
-fun bindAdapterPosterList(view: RecyclerView, posters: List<Poster>?) {
+fun bindAdapterPosterList(view: RecyclerView, posters: List<Article>?) {
     posters.whatIfNotNullOrEmpty {
         (view.adapter as? PosterAdapter)?.addPosterList(it)
     }
 }
 
 @BindingAdapter("adapterPosterLineList")
-fun bindAdapterPosterLineList(view: RecyclerView, posters: List<Poster>?) {
+fun bindAdapterPosterLineList(view: RecyclerView, posters: List<Article>?) {
     posters.whatIfNotNullOrEmpty {
         (view.adapter as? PosterLineAdapter)?.addPosterList(it)
     }
 }
 
 @BindingAdapter("adapterPosterCircleList")
-fun bindAdapterPosterCircleList(view: RecyclerView, posters: List<Poster>?) {
+fun bindAdapterPosterCircleList(view: RecyclerView, posters: List<Article>?) {
     posters.whatIfNotNullOrEmpty {
         (view.adapter as? PosterCircleAdapter)?.addPosterList(it)
     }

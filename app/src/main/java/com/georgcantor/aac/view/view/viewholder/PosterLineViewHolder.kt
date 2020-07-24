@@ -3,17 +3,17 @@ package com.georgcantor.aac.view.view.viewholder
 import android.view.View
 import androidx.core.view.ViewCompat
 import com.georgcantor.aac.databinding.ItemPosterLineBinding
-import com.georgcantor.aac.view.model.Poster
+import com.georgcantor.aac.view.model.Article
 import com.georgcantor.aac.view.view.details.PosterDetailActivity
 import com.skydoves.baserecyclerviewadapter.BaseViewHolder
 
 class PosterLineViewHolder(view: View) : BaseViewHolder(view) {
 
-    private lateinit var data: Poster
+    private lateinit var data: Article
     private val binding: ItemPosterLineBinding by bindings(view)
 
     override fun bindData(data: Any) {
-        if (data is Poster) {
+        if (data is Article) {
             this.data = data
             drawItemUI()
         }
@@ -21,7 +21,7 @@ class PosterLineViewHolder(view: View) : BaseViewHolder(view) {
 
     private fun drawItemUI() {
         binding.apply {
-            ViewCompat.setTransitionName(binding.itemContainer, data.name)
+            ViewCompat.setTransitionName(binding.itemContainer, data.title)
             poster = data
             executePendingBindings()
         }

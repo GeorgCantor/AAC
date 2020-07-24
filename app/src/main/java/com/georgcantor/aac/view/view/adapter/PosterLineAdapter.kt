@@ -2,7 +2,7 @@ package com.georgcantor.aac.view.view.adapter
 
 import android.view.View
 import com.georgcantor.aac.R
-import com.georgcantor.aac.view.model.Poster
+import com.georgcantor.aac.view.model.Article
 import com.georgcantor.aac.view.view.viewholder.PosterLineViewHolder
 import com.skydoves.baserecyclerviewadapter.BaseAdapter
 import com.skydoves.baserecyclerviewadapter.SectionRow
@@ -10,10 +10,10 @@ import com.skydoves.baserecyclerviewadapter.SectionRow
 class PosterLineAdapter : BaseAdapter() {
 
     init {
-        addSection(arrayListOf<Poster>())
+        addSection(arrayListOf<Article>())
     }
 
-    fun addPosterList(posters: List<Poster>) {
+    fun addPosterList(posters: List<Article>) {
         sections().first().run {
             clear()
             addAll(posters)

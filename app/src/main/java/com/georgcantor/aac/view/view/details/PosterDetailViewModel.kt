@@ -1,7 +1,7 @@
 package com.georgcantor.aac.view.view.details
 
-import com.georgcantor.aac.view.base.LiveCoroutinesViewModel
+import androidx.lifecycle.ViewModel
 
-class PosterDetailViewModel() : LiveCoroutinesViewModel() {
+class PosterDetailViewModel() : ViewModel() {
 
 }

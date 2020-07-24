@@ -6,7 +6,7 @@
 
         <variable
             name="poster"
-            type="com.georgcantor.aac.view.model.Poster" />
+            type="com.georgcantor.aac.view.model.Article" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,7 +23,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:loadImage="@{poster.poster}" />
+            app:loadImage="@{poster.urlToImage}" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/poster_detail_close"

@@ -7,7 +7,7 @@
 
         <variable
             name="poster"
-            type="com.georgcantor.aac.view.model.Poster" />
+            type="com.georgcantor.aac.view.model.Article" />
 
         <variable
             name="activity"
@@ -58,7 +58,7 @@
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:loadImage="@{poster.poster}" />
+                        app:loadImage="@{poster.urlToImage}" />
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/fab_more"
@@ -121,7 +121,7 @@
                                 android:ellipsize="end"
                                 android:maxEms="20"
                                 android:maxLines="15"
-                                android:text="@{poster.plot}"
+                                android:text="@{poster.description}"
                                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
                                 android:textColor="@color/white_87"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -138,7 +138,7 @@
                     app:layout_collapseMode="pin"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:simpleToolbarTitle="@{poster.name}"
+                    app:simpleToolbarTitle="@{poster.title}"
                     app:simpleToolbarWithHome="@{activity}" />
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
@@ -157,7 +157,7 @@
                     android:id="@+id/detail_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{poster.name}"
+                    android:text="@{poster.title}"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                     android:textSize="28sp"
                     android:textStyle="bold"

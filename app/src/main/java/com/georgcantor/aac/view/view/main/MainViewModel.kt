@@ -3,13 +3,13 @@ package com.georgcantor.aac.view.view.main
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.georgcantor.aac.view.model.Poster
+import com.georgcantor.aac.view.model.Article
 import com.georgcantor.aac.view.repository.MainRepository
 import kotlinx.coroutines.launch
 
 class MainViewModel constructor(private val mainRepository: MainRepository) : ViewModel() {
 
-    val posterListLiveData = MutableLiveData<List<Poster>>()
+    val articles = MutableLiveData<List<Article>>()
 
     val isLoading = MutableLiveData<Boolean>()
     val toastLiveData: MutableLiveData<String> = MutableLiveData()
@@ -17,8 +17,8 @@ class MainViewModel constructor(private val mainRepository: MainRepository) : Vi
     init {
         viewModelScope.launch {
             isLoading.postValue(true)
-            val response = mainRepository.getPosters()
-            posterListLiveData.postValue(response.body())
+            val response = mainRepository.getNews("bmw", 1)
+            articles.postValue(response.body()?.articles)
             isLoading.postValue(false)
         }
     }
