@@ -24,6 +24,10 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".view.view.details.PosterDetailActivity"
+            android:launchMode="singleTop" />
+
     </application>
 
 </manifest>
