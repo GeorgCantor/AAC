@@ -12,16 +12,28 @@ import com.georgcantor.aac.databinding.ActivityPosterDetailBinding
 import com.georgcantor.aac.view.base.DatabindingActivity
 import com.georgcantor.aac.view.extensions.applyMaterialTransform
 import com.georgcantor.aac.view.model.Poster
-import org.koin.android.viewmodel.ext.android.getViewModel
 
 class PosterDetailActivity : DatabindingActivity() {
+
+    companion object {
+        private const val POSTER_KEY = "posterKey"
+
+        fun startActivityModel(context: Context?, startView: View, poster: Poster) {
+            if (context is Activity) {
+                Intent(context, PosterDetailActivity::class.java).apply {
+                    putExtra(POSTER_KEY, poster)
+                    context.startActivity(this, makeSceneTransitionAnimation(context, startView, poster.name).toBundle())
+                }
+            }
+        }
+    }
 
     private val binding: ActivityPosterDetailBinding by binding(R.layout.activity_poster_detail)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val poster = getViewModel<PosterDetailViewModel>().getPoster(intent.getLongExtra(posterKey, 0))
-        applyMaterialTransform(poster.name)
+        val poster = intent.getParcelableExtra<Poster>(POSTER_KEY)
+        applyMaterialTransform(poster?.name ?: "")
         binding.apply {
             this.poster = poster
             activity = this@PosterDetailActivity
@@ -34,18 +46,5 @@ class PosterDetailActivity : DatabindingActivity() {
         if (item.itemId == android.R.id.home) onBackPressed()
 
         return super.onOptionsItemSelected(item)
-    }
-
-    companion object {
-        private const val posterKey = "posterKey"
-
-        fun startActivityModel(context: Context?, startView: View, poster: Poster) {
-            if (context is Activity) {
-                Intent(context, PosterDetailActivity::class.java).apply {
-                    putExtra(posterKey, poster.id)
-                    context.startActivity(this, makeSceneTransitionAnimation(context, startView, poster.name).toBundle())
-                }
-            }
-        }
     }
 }

@@ -18,7 +18,7 @@ class LibraryFragment : DatabindingFragment() {
             savedInstanceState: Bundle?
     ): View? {
         return binding<FragmentLibraryBinding>(inflater, R.layout.fragment_library, container).apply {
-            viewModel = getViewModel<MainViewModel>().apply { fetchDisneyPosterList() }
+            viewModel = getViewModel<MainViewModel>()
             lifecycleOwner = this@LibraryFragment
             adapter = PosterLineAdapter()
         }.root

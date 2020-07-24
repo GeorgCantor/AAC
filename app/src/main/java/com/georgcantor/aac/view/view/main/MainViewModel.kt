@@ -1,28 +1,25 @@
 package com.georgcantor.aac.view.view.main
 
-import androidx.databinding.ObservableBoolean
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.switchMap
-import com.georgcantor.aac.view.base.LiveCoroutinesViewModel
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.georgcantor.aac.view.model.Poster
 import com.georgcantor.aac.view.repository.MainRepository
+import kotlinx.coroutines.launch
 
-class MainViewModel constructor(private val mainRepository: MainRepository) : LiveCoroutinesViewModel() {
+class MainViewModel constructor(private val mainRepository: MainRepository) : ViewModel() {
 
-    private var posterFetchingLiveData: MutableLiveData<Boolean> = MutableLiveData()
-    val posterListLiveData: LiveData<List<Poster>>
+    val posterListLiveData = MutableLiveData<List<Poster>>()
 
-    val isLoading: ObservableBoolean = mainRepository.isLoading
+    val isLoading = MutableLiveData<Boolean>()
     val toastLiveData: MutableLiveData<String> = MutableLiveData()
 
     init {
-        this.posterListLiveData = this.posterFetchingLiveData.switchMap {
-            launchOnViewModelScope {
-                this.mainRepository.loadDisneyPosters { this.toastLiveData.postValue(it) }
-            }
+        viewModelScope.launch {
+            isLoading.postValue(true)
+            val response = mainRepository.getPosters()
+            posterListLiveData.postValue(response.body())
+            isLoading.postValue(false)
         }
     }
-
-    fun fetchDisneyPosterList() = this.posterFetchingLiveData.postValue(true)
 }

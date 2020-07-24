@@ -18,7 +18,7 @@ class RadioFragment : DatabindingFragment() {
             savedInstanceState: Bundle?
     ): View? {
         return binding<FragmentRadioBinding>(inflater, R.layout.fragment_radio, container).apply {
-            viewModel = getViewModel<MainViewModel>().apply { fetchDisneyPosterList() }
+            viewModel = getViewModel<MainViewModel>()
             lifecycleOwner = this@RadioFragment
             adapter = PosterCircleAdapter()
         }.root
