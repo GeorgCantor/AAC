@@ -37,7 +37,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:loadImage="@{poster.urlToImage}"
-                tools:src="@drawable/ic_library" />
+                tools:src="@drawable/ic_finance" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/item_poster_title"

@@ -46,17 +46,17 @@ fun bindNavigation(view: ViewPager, navigationView: AndroidBottomBarView) {
     navigationView.addBottomMenuItems(mutableListOf(
             BottomMenuItem(view.context)
                     .setTitle("Finance")
-                    .setIcon(R.drawable.ic_home)
+                    .setIcon(R.drawable.ic_finance)
                     .build(),
 
             BottomMenuItem(view.context)
                     .setTitle("Business")
-                    .setIcon(R.drawable.ic_library)
+                    .setIcon(R.drawable.ic_business)
                     .build(),
 
             BottomMenuItem(view.context)
                     .setTitle("Sport")
-                    .setIcon(R.drawable.ic_radio)
+                    .setIcon(R.drawable.ic_sports)
                     .build()))
 
     navigationView.setOnMenuItemSelectedListener { index, _, _ ->
