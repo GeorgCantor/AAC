@@ -11,7 +11,7 @@ import com.georgcantor.aac.databinding.FragmentHomeBinding
 import com.georgcantor.aac.view.base.DatabindingFragment
 import com.georgcantor.aac.view.extensions.gone
 import com.georgcantor.aac.view.extensions.visible
-import com.georgcantor.aac.view.view.adapter.PosterAdapter
+import com.georgcantor.aac.view.view.adapter.ArticleAdapter
 import com.google.android.material.transition.platform.MaterialArcMotion
 import com.google.android.material.transition.platform.MaterialContainerTransform
 import org.koin.android.viewmodel.ext.android.getViewModel
@@ -28,7 +28,7 @@ class HomeFragment : DatabindingFragment() {
         binding = binding<FragmentHomeBinding>(inflater, R.layout.fragment_home, container).apply {
             viewModel = getViewModel<MainViewModel>()
             lifecycleOwner = this@HomeFragment
-            adapter = PosterAdapter()
+            adapter = ArticleAdapter()
         }
         return binding.root
     }

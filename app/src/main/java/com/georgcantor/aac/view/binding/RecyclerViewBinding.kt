@@ -5,9 +5,9 @@ import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.georgcantor.aac.view.model.Article
-import com.georgcantor.aac.view.view.adapter.PosterAdapter
-import com.georgcantor.aac.view.view.adapter.PosterCircleAdapter
-import com.georgcantor.aac.view.view.adapter.PosterLineAdapter
+import com.georgcantor.aac.view.view.adapter.ArticleAdapter
+import com.georgcantor.aac.view.view.adapter.ArticleCircleAdapter
+import com.georgcantor.aac.view.view.adapter.ArticleLineAdapter
 import com.skydoves.baserecyclerviewadapter.BaseAdapter
 import com.skydoves.whatif.whatIfNotNull
 import com.skydoves.whatif.whatIfNotNullOrEmpty
@@ -27,20 +27,20 @@ fun bindToast(view: RecyclerView, text: LiveData<String>) {
 @BindingAdapter("adapterPosterList")
 fun bindAdapterPosterList(view: RecyclerView, posters: List<Article>?) {
     posters.whatIfNotNullOrEmpty {
-        (view.adapter as? PosterAdapter)?.addPosterList(it)
+        (view.adapter as? ArticleAdapter)?.addPosterList(it)
     }
 }
 
 @BindingAdapter("adapterPosterLineList")
 fun bindAdapterPosterLineList(view: RecyclerView, posters: List<Article>?) {
     posters.whatIfNotNullOrEmpty {
-        (view.adapter as? PosterLineAdapter)?.addPosterList(it)
+        (view.adapter as? ArticleLineAdapter)?.addPosterList(it)
     }
 }
 
 @BindingAdapter("adapterPosterCircleList")
 fun bindAdapterPosterCircleList(view: RecyclerView, posters: List<Article>?) {
     posters.whatIfNotNullOrEmpty {
-        (view.adapter as? PosterCircleAdapter)?.addPosterList(it)
+        (view.adapter as? ArticleCircleAdapter)?.addPosterList(it)
     }
 }

@@ -4,7 +4,7 @@ import android.view.View
 import androidx.core.view.ViewCompat
 import com.georgcantor.aac.databinding.ItemPosterLineBinding
 import com.georgcantor.aac.view.model.Article
-import com.georgcantor.aac.view.view.details.PosterDetailActivity
+import com.georgcantor.aac.view.view.details.DetailActivity
 import com.skydoves.baserecyclerviewadapter.BaseViewHolder
 
 class PosterLineViewHolder(view: View) : BaseViewHolder(view) {
@@ -28,7 +28,7 @@ class PosterLineViewHolder(view: View) : BaseViewHolder(view) {
     }
 
     override fun onClick(view: View?) =
-            PosterDetailActivity.startActivityModel(context(), binding.itemContainer, data)
+            DetailActivity.startActivityModel(context(), binding.itemContainer, data)
 
     override fun onLongClick(view: View?) = false
 }

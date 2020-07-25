@@ -11,7 +11,7 @@
 
         <variable
             name="adapter"
-            type="com.georgcantor.aac.view.view.adapter.PosterAdapter" />
+            type="com.georgcantor.aac.view.view.adapter.ArticleAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

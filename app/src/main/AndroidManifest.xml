@@ -25,7 +25,7 @@
         </activity>
 
         <activity
-            android:name=".view.view.details.PosterDetailActivity"
+            android:name=".view.view.details.DetailActivity"
             android:launchMode="singleTop" />
 
     </application>

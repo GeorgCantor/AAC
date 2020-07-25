@@ -3,11 +3,11 @@ package com.georgcantor.aac.view.view.adapter
 import android.view.View
 import com.georgcantor.aac.R
 import com.georgcantor.aac.view.model.Article
-import com.georgcantor.aac.view.view.viewholder.PosterCircleViewHolder
+import com.georgcantor.aac.view.view.viewholder.PosterViewHolder
 import com.skydoves.baserecyclerviewadapter.BaseAdapter
 import com.skydoves.baserecyclerviewadapter.SectionRow
 
-class PosterCircleAdapter : BaseAdapter() {
+class ArticleAdapter : BaseAdapter() {
 
     init {
         addSection(arrayListOf<Article>())
@@ -21,7 +21,7 @@ class PosterCircleAdapter : BaseAdapter() {
         }
     }
 
-    override fun layout(sectionRow: SectionRow) = R.layout.item_poster_circle
+    override fun layout(sectionRow: SectionRow) = R.layout.item_poster
 
-    override fun viewHolder(layout: Int, view: View) = PosterCircleViewHolder(view)
+    override fun viewHolder(layout: Int, view: View) = PosterViewHolder(view)
 }

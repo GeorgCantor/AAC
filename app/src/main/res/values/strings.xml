@@ -1,8 +1,4 @@
 <resources>
     <string name="app_name">News</string>
-    <string name="menu_home">Sport</string>
-    <string name="menu_library">Business</string>
-    <string name="menu_radio">Finance</string>
-    <string name="poster_transition">poster_shared_element_container</string>
     <string name="plot">Plot</string>
 </resources>

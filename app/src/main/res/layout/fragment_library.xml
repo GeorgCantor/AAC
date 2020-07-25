@@ -11,7 +11,7 @@
 
         <variable
             name="adapter"
-            type="com.georgcantor.aac.view.view.adapter.PosterLineAdapter" />
+            type="com.georgcantor.aac.view.view.adapter.ArticleLineAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

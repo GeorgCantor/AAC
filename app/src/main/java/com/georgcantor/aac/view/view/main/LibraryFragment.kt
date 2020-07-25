@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.georgcantor.aac.R
 import com.georgcantor.aac.databinding.FragmentLibraryBinding
 import com.georgcantor.aac.view.base.DatabindingFragment
-import com.georgcantor.aac.view.view.adapter.PosterLineAdapter
+import com.georgcantor.aac.view.view.adapter.ArticleLineAdapter
 import org.koin.android.viewmodel.ext.android.getViewModel
 
 class LibraryFragment : DatabindingFragment() {
@@ -20,7 +20,7 @@ class LibraryFragment : DatabindingFragment() {
         return binding<FragmentLibraryBinding>(inflater, R.layout.fragment_library, container).apply {
             viewModel = getViewModel<MainViewModel>()
             lifecycleOwner = this@LibraryFragment
-            adapter = PosterLineAdapter()
+            adapter = ArticleLineAdapter()
         }.root
     }
 }

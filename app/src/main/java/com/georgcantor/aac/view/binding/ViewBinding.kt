@@ -45,17 +45,17 @@ fun bindGone(view: View, shouldBeGone: Boolean) {
 fun bindNavigation(view: ViewPager, navigationView: AndroidBottomBarView) {
     navigationView.addBottomMenuItems(mutableListOf(
             BottomMenuItem(view.context)
-                    .setTitle("Home")
+                    .setTitle("Finance")
                     .setIcon(R.drawable.ic_home)
                     .build(),
 
             BottomMenuItem(view.context)
-                    .setTitle("Tv")
+                    .setTitle("Business")
                     .setIcon(R.drawable.ic_library)
                     .build(),
 
             BottomMenuItem(view.context)
-                    .setTitle("Radio")
+                    .setTitle("Sport")
                     .setIcon(R.drawable.ic_radio)
                     .build()))
 

@@ -13,14 +13,14 @@ import com.georgcantor.aac.view.base.DatabindingActivity
 import com.georgcantor.aac.view.extensions.applyMaterialTransform
 import com.georgcantor.aac.view.model.Article
 
-class PosterDetailActivity : DatabindingActivity() {
+class DetailActivity : DatabindingActivity() {
 
     companion object {
         private const val POSTER_KEY = "posterKey"
 
         fun startActivityModel(context: Context?, startView: View, poster: Article) {
             if (context is Activity) {
-                Intent(context, PosterDetailActivity::class.java).apply {
+                Intent(context, DetailActivity::class.java).apply {
                     putExtra(POSTER_KEY, poster)
                     context.startActivity(this, makeSceneTransitionAnimation(context, startView, poster.title).toBundle())
                 }
@@ -36,7 +36,7 @@ class PosterDetailActivity : DatabindingActivity() {
         applyMaterialTransform(poster?.title ?: "")
         binding.apply {
             this.poster = poster
-            activity = this@PosterDetailActivity
+            activity = this@DetailActivity
             container = detailContainer
             fab = fabMore
         }
