@@ -10,8 +10,8 @@ import androidx.core.app.ActivityOptionsCompat.makeSceneTransitionAnimation
 import com.georgcantor.aac.R
 import com.georgcantor.aac.databinding.ActivityPosterDetailBinding
 import com.georgcantor.aac.view.base.DatabindingActivity
-import com.georgcantor.aac.view.extensions.applyMaterialTransform
 import com.georgcantor.aac.view.model.Article
+import com.georgcantor.aac.view.utils.applyMaterialTransform
 
 class DetailActivity : DatabindingActivity() {
 

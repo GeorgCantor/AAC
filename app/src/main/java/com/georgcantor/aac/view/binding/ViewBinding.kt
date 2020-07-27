@@ -12,8 +12,8 @@ import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.bumptech.glide.Glide
 import com.georgcantor.aac.R
-import com.georgcantor.aac.view.extensions.gone
-import com.georgcantor.aac.view.extensions.visible
+import com.georgcantor.aac.view.utils.gone
+import com.georgcantor.aac.view.utils.visible
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener
 import com.google.android.material.floatingactionbutton.FloatingActionButton

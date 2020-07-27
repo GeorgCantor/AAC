@@ -5,7 +5,7 @@ import androidx.viewpager.widget.ViewPager
 import com.georgcantor.aac.R
 import com.georgcantor.aac.databinding.ActivityMainBinding
 import com.georgcantor.aac.view.base.DatabindingActivity
-import com.georgcantor.aac.view.extensions.applyExitMaterialTransform
+import com.georgcantor.aac.view.utils.applyExitMaterialTransform
 import com.georgcantor.aac.view.view.business.BusinessFragment
 import com.georgcantor.aac.view.view.finance.FinanceFragment
 import com.georgcantor.aac.view.view.sport.SportFragment

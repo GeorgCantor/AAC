@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import com.georgcantor.aac.R
 import com.georgcantor.aac.databinding.FragmentFinanceBinding
 import com.georgcantor.aac.view.base.DatabindingFragment
-import com.georgcantor.aac.view.extensions.gone
-import com.georgcantor.aac.view.extensions.visible
+import com.georgcantor.aac.view.utils.gone
+import com.georgcantor.aac.view.utils.visible
 import com.georgcantor.aac.view.view.adapter.ArticleAdapter
 import com.google.android.material.transition.platform.MaterialArcMotion
 import com.google.android.material.transition.platform.MaterialContainerTransform
