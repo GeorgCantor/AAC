@@ -29,7 +29,7 @@
             app:adapterPosterLineList="@{viewModel.articles}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:toast="@{viewModel.toastLiveData}"
-            tools:listitem="@layout/item_poster_line" />
+            tools:listitem="@layout/item_article_line" />
 
         <ProgressBar
             android:layout_width="wrap_content"

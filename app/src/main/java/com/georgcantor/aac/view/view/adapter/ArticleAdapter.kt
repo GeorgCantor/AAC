@@ -21,7 +21,7 @@ class ArticleAdapter : BaseAdapter() {
         }
     }
 
-    override fun layout(sectionRow: SectionRow) = R.layout.item_poster
+    override fun layout(sectionRow: SectionRow) = R.layout.item_article
 
     override fun viewHolder(layout: Int, view: View) = PosterViewHolder(view)
 }

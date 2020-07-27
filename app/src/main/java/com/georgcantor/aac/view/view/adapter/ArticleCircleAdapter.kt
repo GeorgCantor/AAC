@@ -21,7 +21,7 @@ class ArticleCircleAdapter : BaseAdapter() {
         }
     }
 
-    override fun layout(sectionRow: SectionRow) = R.layout.item_poster_circle
+    override fun layout(sectionRow: SectionRow) = R.layout.item_article_circle
 
     override fun viewHolder(layout: Int, view: View) = PosterCircleViewHolder(view)
 }

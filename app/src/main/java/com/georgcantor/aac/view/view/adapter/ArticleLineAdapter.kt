@@ -21,7 +21,7 @@ class ArticleLineAdapter : BaseAdapter() {
         }
     }
 
-    override fun layout(sectionRow: SectionRow) = R.layout.item_poster_line
+    override fun layout(sectionRow: SectionRow) = R.layout.item_article_line
 
     override fun viewHolder(layout: Int, view: View) = PosterLineViewHolder(view)
 }

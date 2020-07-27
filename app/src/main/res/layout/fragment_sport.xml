@@ -29,7 +29,7 @@
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2"
             app:toast="@{viewModel.toastLiveData}"
-            tools:listitem="@layout/item_poster_circle" />
+            tools:listitem="@layout/item_article_circle" />
 
         <ProgressBar
             android:layout_width="wrap_content"

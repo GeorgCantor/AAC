@@ -16,12 +16,12 @@ import com.georgcantor.aac.view.model.Article
 class DetailActivity : DatabindingActivity() {
 
     companion object {
-        private const val POSTER_KEY = "posterKey"
+        private const val ARTICLE_KEY = "article_key"
 
         fun startActivityModel(context: Context?, startView: View, poster: Article) {
             if (context is Activity) {
                 Intent(context, DetailActivity::class.java).apply {
-                    putExtra(POSTER_KEY, poster)
+                    putExtra(ARTICLE_KEY, poster)
                     context.startActivity(this, makeSceneTransitionAnimation(context, startView, poster.title).toBundle())
                 }
             }
@@ -32,7 +32,7 @@ class DetailActivity : DatabindingActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val poster = intent.getParcelableExtra<Article>(POSTER_KEY)
+        val poster = intent.getParcelableExtra<Article>(ARTICLE_KEY)
         applyMaterialTransform(poster?.title ?: "")
         binding.apply {
             this.poster = poster

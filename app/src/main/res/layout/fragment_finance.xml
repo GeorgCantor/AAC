@@ -30,7 +30,7 @@
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2"
             app:toast="@{viewModel.toastLiveData}"
-            tools:listitem="@layout/item_poster" />
+            tools:listitem="@layout/item_article" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"

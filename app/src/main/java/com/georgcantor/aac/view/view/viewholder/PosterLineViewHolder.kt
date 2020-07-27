@@ -2,7 +2,7 @@ package com.georgcantor.aac.view.view.viewholder
 
 import android.view.View
 import androidx.core.view.ViewCompat
-import com.georgcantor.aac.databinding.ItemPosterLineBinding
+import com.georgcantor.aac.databinding.ItemArticleLineBinding
 import com.georgcantor.aac.view.model.Article
 import com.georgcantor.aac.view.view.details.DetailActivity
 import com.skydoves.baserecyclerviewadapter.BaseViewHolder
@@ -10,7 +10,7 @@ import com.skydoves.baserecyclerviewadapter.BaseViewHolder
 class PosterLineViewHolder(view: View) : BaseViewHolder(view) {
 
     private lateinit var data: Article
-    private val binding: ItemPosterLineBinding by bindings(view)
+    private val binding: ItemArticleLineBinding by bindings(view)
 
     override fun bindData(data: Any) {
         if (data is Article) {
