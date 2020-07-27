@@ -8,9 +8,9 @@ class MainPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_
 
     override fun getItem(position: Int): Fragment {
         return when (position) {
-            0 -> HomeFragment()
-            1 -> LibraryFragment()
-            else -> RadioFragment()
+            0 -> FinanceFragment()
+            1 -> BusinessFragment()
+            else -> SportFragment()
         }
     }
 

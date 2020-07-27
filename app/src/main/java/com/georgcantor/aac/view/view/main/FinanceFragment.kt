@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.georgcantor.aac.R
-import com.georgcantor.aac.databinding.FragmentHomeBinding
+import com.georgcantor.aac.databinding.FragmentFinanceBinding
 import com.georgcantor.aac.view.base.DatabindingFragment
 import com.georgcantor.aac.view.extensions.gone
 import com.georgcantor.aac.view.extensions.visible
@@ -16,18 +16,18 @@ import com.google.android.material.transition.platform.MaterialArcMotion
 import com.google.android.material.transition.platform.MaterialContainerTransform
 import org.koin.android.viewmodel.ext.android.getViewModel
 
-class HomeFragment : DatabindingFragment() {
+class FinanceFragment : DatabindingFragment() {
 
-    private lateinit var binding: FragmentHomeBinding
+    private lateinit var binding: FragmentFinanceBinding
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        binding = binding<FragmentHomeBinding>(inflater, R.layout.fragment_home, container).apply {
+        binding = binding<FragmentFinanceBinding>(inflater, R.layout.fragment_finance, container).apply {
             viewModel = getViewModel<MainViewModel>()
-            lifecycleOwner = this@HomeFragment
+            lifecycleOwner = this@FinanceFragment
             adapter = ArticleAdapter()
         }
         return binding.root
