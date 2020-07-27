@@ -11,4 +11,7 @@ data class Article(
         var urlToImage: String?,
         var publishedAt: String,
         var content: String
-) : Parcelable
+) : Parcelable {
+
+    fun formattedDate(): String = publishedAt.drop(11).dropLast(4)
+}
