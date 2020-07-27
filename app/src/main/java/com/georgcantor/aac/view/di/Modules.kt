@@ -4,7 +4,6 @@ import com.georgcantor.aac.view.network.ApiService
 import com.georgcantor.aac.view.network.RequestInterceptor
 import com.georgcantor.aac.view.repository.Repository
 import com.georgcantor.aac.view.view.business.BusinessViewModel
-import com.georgcantor.aac.view.view.details.DetailViewModel
 import com.georgcantor.aac.view.view.finance.FinanceViewModel
 import com.georgcantor.aac.view.view.sport.SportViewModel
 import okhttp3.OkHttpClient
@@ -40,5 +39,4 @@ val viewModelModule = module {
     viewModel { FinanceViewModel(get()) }
     viewModel { BusinessViewModel(get()) }
     viewModel { SportViewModel(get()) }
-    viewModel { DetailViewModel() }
 }

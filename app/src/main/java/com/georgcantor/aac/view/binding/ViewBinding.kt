@@ -84,8 +84,6 @@ fun bindAppBarLayoutWithFab(appBarLayout: AppBarLayout, fab: FloatingActionButto
 @BindingAdapter("transformFab", "transformContainer")
 fun bindTransformFab(view: View, fab: FloatingActionButton, container: CoordinatorLayout) {
     fab.setOnClickListener {
-        // Begin the transition by changing properties on the start and end views or
-        // removing/adding them from the hierarchy.
         fab.tag = GONE
         TransitionManager.beginDelayedTransition(container, getTransform(fab, view))
         fab.gone(true)

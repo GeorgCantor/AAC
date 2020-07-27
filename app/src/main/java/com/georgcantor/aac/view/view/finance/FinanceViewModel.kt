@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 class FinanceViewModel(private val repository: Repository) : ViewModel() {
 
     val articles = MutableLiveData<List<Article>>()
+    val searchArticles = MutableLiveData<List<Article>>()
     val isLoading = MutableLiveData<Boolean>()
     val toastLiveData: MutableLiveData<String> = MutableLiveData()
 
@@ -18,6 +19,15 @@ class FinanceViewModel(private val repository: Repository) : ViewModel() {
             isLoading.postValue(true)
             val response = repository.getNews("finance", 1)
             articles.postValue(response.body()?.articles)
+            isLoading.postValue(false)
+        }
+    }
+
+    fun search(query: String) {
+        viewModelScope.launch {
+            isLoading.postValue(true)
+            val response = repository.getNews(query, 1)
+            searchArticles.postValue(response.body()?.articles)
             isLoading.postValue(false)
         }
     }

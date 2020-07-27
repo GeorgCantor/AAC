@@ -19,6 +19,12 @@ import org.koin.android.viewmodel.ext.android.getViewModel
 class FinanceFragment : DatabindingFragment() {
 
     private lateinit var binding: FragmentFinanceBinding
+    private lateinit var financeViewModel: FinanceViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        financeViewModel = getViewModel()
+    }
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -26,7 +32,7 @@ class FinanceFragment : DatabindingFragment() {
             savedInstanceState: Bundle?
     ): View? {
         binding = binding<FragmentFinanceBinding>(inflater, R.layout.fragment_finance, container).apply {
-            viewModel = getViewModel<FinanceViewModel>()
+            viewModel = financeViewModel
             lifecycleOwner = this@FinanceFragment
             adapter = ArticleAdapter()
         }
@@ -46,6 +52,10 @@ class FinanceFragment : DatabindingFragment() {
             TransitionManager.beginDelayedTransition(binding.container, getTransform(it, binding.fab))
             binding.fab.visible()
             it.gone(true)
+        }
+
+        binding.searchButton.setOnClickListener {
+            financeViewModel.search(binding.searchEditText.text.toString())
         }
     }
 
