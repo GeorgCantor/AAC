@@ -1,4 +1,4 @@
-package com.georgcantor.aac.view.view.main
+package com.georgcantor.aac.view.view.business
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,7 +18,7 @@ class BusinessFragment : DatabindingFragment() {
             savedInstanceState: Bundle?
     ): View? {
         return binding<FragmentBusinessBinding>(inflater, R.layout.fragment_business, container).apply {
-            viewModel = getViewModel<MainViewModel>()
+            viewModel = getViewModel<BusinessViewModel>()
             lifecycleOwner = this@BusinessFragment
             adapter = ArticleLineAdapter()
         }.root

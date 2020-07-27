@@ -1,4 +1,4 @@
-package com.georgcantor.aac.view.view.main
+package com.georgcantor.aac.view.view.finance
 
 import android.graphics.Color
 import android.os.Bundle
@@ -26,7 +26,7 @@ class FinanceFragment : DatabindingFragment() {
             savedInstanceState: Bundle?
     ): View? {
         binding = binding<FragmentFinanceBinding>(inflater, R.layout.fragment_finance, container).apply {
-            viewModel = getViewModel<MainViewModel>()
+            viewModel = getViewModel<FinanceViewModel>()
             lifecycleOwner = this@FinanceFragment
             adapter = ArticleAdapter()
         }

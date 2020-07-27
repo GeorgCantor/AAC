@@ -3,8 +3,10 @@ package com.georgcantor.aac.view.di
 import com.georgcantor.aac.view.network.ApiService
 import com.georgcantor.aac.view.network.RequestInterceptor
 import com.georgcantor.aac.view.repository.Repository
+import com.georgcantor.aac.view.view.business.BusinessViewModel
 import com.georgcantor.aac.view.view.details.DetailViewModel
-import com.georgcantor.aac.view.view.main.MainViewModel
+import com.georgcantor.aac.view.view.finance.FinanceViewModel
+import com.georgcantor.aac.view.view.sport.SportViewModel
 import okhttp3.OkHttpClient
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -35,6 +37,8 @@ val repositoryModule = module {
 }
 
 val viewModelModule = module {
-    viewModel { MainViewModel(get()) }
+    viewModel { FinanceViewModel(get()) }
+    viewModel { BusinessViewModel(get()) }
+    viewModel { SportViewModel(get()) }
     viewModel { DetailViewModel() }
 }

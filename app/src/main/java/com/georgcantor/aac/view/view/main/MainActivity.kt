@@ -5,7 +5,6 @@ import com.georgcantor.aac.R
 import com.georgcantor.aac.databinding.ActivityMainBinding
 import com.georgcantor.aac.view.base.DatabindingActivity
 import com.georgcantor.aac.view.extensions.applyExitMaterialTransform
-import org.koin.android.viewmodel.ext.android.getViewModel
 
 class MainActivity : DatabindingActivity() {
 
@@ -17,7 +16,6 @@ class MainActivity : DatabindingActivity() {
         binding.apply {
             pagerAdapter = MainPagerAdapter(supportFragmentManager)
             navigation = mainBottomNavigation
-            vm = getViewModel()
         }
     }
 }

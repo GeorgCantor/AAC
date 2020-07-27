@@ -1,4 +1,4 @@
-package com.georgcantor.aac.view.view.main
+package com.georgcantor.aac.view.view.sport
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,7 +18,7 @@ class SportFragment : DatabindingFragment() {
             savedInstanceState: Bundle?
     ): View? {
         return binding<FragmentSportBinding>(inflater, R.layout.fragment_sport, container).apply {
-            viewModel = getViewModel<MainViewModel>()
+            viewModel = getViewModel<SportViewModel>()
             lifecycleOwner = this@SportFragment
             adapter = ArticleCircleAdapter()
         }.root

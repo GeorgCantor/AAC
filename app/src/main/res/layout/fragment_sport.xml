@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.georgcantor.aac.view.view.main.MainViewModel" />
+            type="com.georgcantor.aac.view.view.sport.SportViewModel" />
 
         <variable
             name="adapter"
@@ -30,6 +30,15 @@
             app:spanCount="2"
             app:toast="@{viewModel.toastLiveData}"
             tools:listitem="@layout/item_poster_circle" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:gone="@{!viewModel.isLoading()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
