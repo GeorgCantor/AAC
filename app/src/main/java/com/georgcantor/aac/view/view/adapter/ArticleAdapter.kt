@@ -3,7 +3,7 @@ package com.georgcantor.aac.view.view.adapter
 import android.view.View
 import com.georgcantor.aac.R
 import com.georgcantor.aac.view.model.Article
-import com.georgcantor.aac.view.view.viewholder.PosterViewHolder
+import com.georgcantor.aac.view.view.viewholder.ArticleViewHolder
 import com.skydoves.baserecyclerviewadapter.BaseAdapter
 import com.skydoves.baserecyclerviewadapter.SectionRow
 
@@ -23,5 +23,5 @@ class ArticleAdapter : BaseAdapter() {
 
     override fun layout(sectionRow: SectionRow) = R.layout.item_article
 
-    override fun viewHolder(layout: Int, view: View) = PosterViewHolder(view)
+    override fun viewHolder(layout: Int, view: View) = ArticleViewHolder(view)
 }
