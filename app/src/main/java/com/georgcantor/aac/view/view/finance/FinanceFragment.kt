@@ -5,7 +5,10 @@ import android.os.Bundle
 import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import com.georgcantor.aac.R
 import com.georgcantor.aac.databinding.FragmentFinanceBinding
 import com.georgcantor.aac.view.base.DatabindingFragment
@@ -41,6 +44,16 @@ class FinanceFragment : DatabindingFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                when (binding.card.visibility) {
+                    VISIBLE -> binding.card.performClick()
+                    GONE -> activity?.finish()
+                }
+            }
+        }
+        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, callback)
 
         binding.fab.setOnClickListener {
             TransitionManager.beginDelayedTransition(binding.container, getTransform(it, binding.card))
